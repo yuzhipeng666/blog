@@ -1,0 +1,441 @@
+/*!
+ * Index Css
+ * @Author Gang Chen
+ */
+
+/* Slide */
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-height: 537px;
+    height: 100%;
+    overflow: hidden;
+}
+.flexslider .slides img {
+    height: 100%!important;
+}
+
+/** Client **/
+
+.home-client {
+    padding: 0 15px 40px 15px;
+}
+.home-client li {
+    float: left;
+    width: 33.3333%;
+    padding: 12px 0;
+    text-align: center;
+}
+.home-client li img {
+    height: 50px;
+}
+
+/** About **/
+
+.home-about {
+    display: inline-block;
+    margin: auto;
+    padding: 111px 15px 101px 15px;
+    width: 100%;
+}
+.home-about .img {
+    float: left;
+    width: 47%;
+}
+.home-about .img img {
+    width: 100%;
+}
+.home-about .info {
+    float: right;
+    width: 51%;
+    padding-top: 40px;
+}
+.home-about.en .info {
+    padding-top: 20px;
+}
+.home-about .icon,
+.home-about .title,
+.home-about .des,
+.home-about .panel-ft {
+    float: left;
+    clear: both;
+    text-align: left;
+}
+.home-about .icon {
+    padding: 9px 8px 8px 8px;
+    line-height: 24px;
+    color: #fff;
+    background: #000;
+}
+.home-about .title,
+.home-about .des {
+    /*font-family: PingFangSC-Regular, -apple-system-font, "Helvetica Neue", Microsoft YaHei, sans-serif;*/
+}
+.home-about .title {
+    padding-top: 27px;
+    font-size: 2.1rem;
+    font-weight: bold;
+    letter-spacing: 3px;
+    color: rgb(40,40,40);
+}
+.home-about .des {
+    /*padding-right: 30px;*/
+    /*line-height: 3.2rem;*/
+    line-height: 2.4rem;
+    text-align: left;
+    color: rgb(108,107,107);
+}
+.home-about .des p {
+    padding-top: 20px;
+}
+.home-about .panel-ft {
+    padding-top: 25px;
+    padding-bottom: 0;
+    text-align: left;
+}
+.home-about .panel-ft a {
+    /*margin: 20px auto auto;*/
+}
+@media (max-width: 1136px) {
+    .home-about .info {
+        padding-top: 23px;
+    }
+    .home-about.en .info {
+        padding-top: 11px;
+    }
+}
+@media (max-width: 1060px) {
+    .home-about .info {
+        padding-top: 10px;
+    }
+    .home-about.en .info {
+        padding-top: 5px;
+    }
+}
+@media (max-width: 1000px) {
+    .home-about .info {
+        padding-top: 5px;
+    }
+    .home-about.en .info {
+        padding-top: 2px;
+    }
+}
+@media (max-width: 980px) {
+    .home-about .info {
+        padding-top: 0;
+    }
+}
+
+/** Team **/
+
+.home-team {
+    max-width: 1492px;
+}
+.team {
+
+}
+.team li {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    width: 25%;
+}
+.team li > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0);
+}
+.team li div,
+.team li span,
+.team li img {
+    -webkit-transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: all 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+.team li > div > span {
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    color: rgba(255,255,255,0);
+    -webkit-transform: translate(0,-50%);
+    transform: translate(0,-50%);
+}
+.team li:hover div {
+    background: rgba(0,0,0,0.6);
+}
+.team li:hover span {
+    color: rgba(255,255,255,1);
+}
+.team li:hover img {
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+}
+.team li .name {
+    font-size: 2.9rem;
+    font-weight: bold;
+}
+.team li .name-en {
+    font-size: 2.6rem;
+}
+.team li img {
+    width: 100%;
+}
+@media (max-width: 1300px) {
+    .team li .name { font-size: 2.4rem; }
+    .team li .name-en { font-size: 2.2rem; }
+}
+@media (max-width: 1000px) {
+    .team li .name { font-size: 1.8rem; }
+    .team li .name-en { font-size: 1.6rem; }
+}
+
+/** Blog **/
+
+/*.home-blog li {
+    width: 100%;
+}
+.home-blog li a {
+    display: inline-block;
+}
+.home-blog li .title {
+    width: 100%;
+    padding-bottom: 10px;
+}
+.home-blog li .title p {
+    width: 100%;
+    padding: 0 20px 5px 20px;
+}
+.home-blog li .title .date {
+    color: #ababab;
+}
+.home-blog li .title .date span {
+    margin-left: 15px;
+    color: #cdcdcd;
+}
+.home-blog li .info {
+    padding: 0 20px 15px 20px;
+}
+.home-blog li .info img {
+    width: 100%;
+    margin-bottom: 15px;
+}*/
+
+/** Contact **/
+
+.home-contact {
+    /*font-family: PingFangSC-Regular, -apple-system-font, "Helvetica Neue", Microsoft YaHei, sans-serif;*/
+}
+.home-contact .panel-bd {
+    padding: 0 20px 25px 20px;
+}
+.home-contact h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #444;
+}
+.home-contact a {
+    color: #999;
+    text-decoration: none!important;
+}
+.home-contact .icon-map {
+    margin-left: 5px;
+    font-size: 2.6rem;
+    color: #666;
+}
+.home-contact p {
+    padding-bottom: 12px;
+    font-size: 1.4rem;
+    color: #999;
+}
+.home-contact p a {
+    text-decoration: underline;
+}
+.home-contact .fl {
+    display: inline-block;
+    width: 37px;
+    height: 37px;
+    margin: 5px 5px 5px 0;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #A0A0A0;
+    background: #FFFFFF;
+    border: #f0f0f0 1px solid;
+    border-radius: 30px;
+}
+.home-contact .fl i {
+    margin-top: 7px;
+    font-size: 20px;
+}
+.home-contact .wx {
+    position: relative;
+}
+.home-contact .wx div {
+    /*display: none;*/
+    position: absolute;
+    left: -10px;
+    bottom: 35px;
+    width: 250px;
+    height: 250px;
+    background: url(../images/weixin.png) no-repeat;
+    background-size: 100%;
+}
+/*.home-contact .wx:hover div {
+    display: block;
+}
+*/
+
+/** Responsive - PC **/
+
+@media (min-width: 800px) {
+
+    .home-about-title {
+        display: none;
+    }
+    .home-about .title {
+        font-size: 2.2rem;
+    }
+    .home-about .des {
+        font-size: 1.6rem;
+        font-weight: bold;
+    }
+
+    .home-client-panel {
+        max-width: 1319px;
+    }
+    .home-client {
+        padding-bottom: 81px;
+    }
+    .home-client li {
+        width: 12.5%;
+        padding: 0;
+    }
+    .home-client li img {
+        height: 100%;
+    }
+
+    .panel-hd {
+        padding: 83px 0 35px 0;
+    }
+
+    .home-client-panel .panel-hd {
+        padding: 74px 0 35px 0;
+    }
+
+    .home-team .panel-hd {
+        padding: 98px 0 81px 0;
+    }
+
+    .home-blog .panel-hd {
+        padding: 108px 0 100px 0;
+    }
+
+    .home-blog .blog {
+        padding-bottom: 0;
+    }
+    .home-blog .blog li {
+        float: left;
+        width: 33.3333%;
+        padding-bottom: 20px;
+    }
+    .home-blog .blog li .img img {
+        max-height: inherit;
+    }
+
+    .home-contact .panel-hd {
+        display: none;
+    }
+    .home-contact .panel-bd {
+        padding-top: 60px;
+        padding-bottom: 25px;
+    }
+    .home-contact h3 {
+        font-size: 2.2rem;
+        font-weight: bold;
+    }
+    .home-contact p {
+        display: inline-block;
+        margin-right: 2rem;
+        font-size: 1.8rem;
+    }
+
+}
+
+/** Responsive - Phone **/
+
+@media (max-width: 799px) {
+
+    .slider {
+
+        height: 150px;
+    }
+    .home-about {
+        width: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .home-about .img,
+    .home-about .icon,
+    .home-about .title {
+        display: none;
+    }
+    .home-about .info {
+        width: 100%;
+    }
+    .home-about .des {
+        /*padding-right: 0;*/
+        line-height: 2.6rem;
+        font-size: 1.4rem;
+    }
+    .home-about .des p {
+        padding-top: 0;
+    }
+    .home-about .panel-ft {
+        width: 100%;
+        padding-top: 25px;
+        padding-bottom: 40px;
+        text-align: center;
+    }
+
+    .team {
+        padding: 0 15px;
+    }
+    .team li {
+        width: 50%;
+    }
+    .team li .name {
+        font-size: 1.4rem;
+    }
+    .team li .name-en {
+        font-size: 1.4rem;
+    }
+
+    .home-blog .blog {
+        padding: 0;
+    }
+    .home-blog .blog li {
+        padding-bottom: 20px;
+    }
+    .home-blog .blog li:first-child {
+        padding-top: 0;
+    }
+    .home-blog .blog li:last-child {
+        padding-bottom: 22px;
+    }
+    .home-blog .blog li:last-child a:after {
+        display: none;
+    }
+    .home-blog .blog li a {
+        padding: 0;
+        margin: auto 15px;
+    }
+    .home-blog .blog li a:after {
+        bottom: -18px;
+    }
+
+}

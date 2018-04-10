@@ -27,6 +27,7 @@ Route::post('/do_login', 'AdminHomeController@do_login');
 Route::get('/dashboard', 'AdminHomeController@dashboard');
 
 //Route::group(['middleware' => 'auth'], function () {
+    Route::get('/addadmins', 'AdminHomeController@addadmins');
     //Banner 路由
     Route::post('/bannerListchax', 'AdminHomeController@bannerListchax');
     Route::get('/banner', 'AdminHomeController@bannerList');

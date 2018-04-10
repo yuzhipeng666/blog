@@ -23,7 +23,11 @@ class WebHomeController extends Controller
 
     public function diffusion()
     {
-        return view('web.diffusion.page');
+        $bannerdata = Banners::select("*")->where("types","=","4")->where("status","=","Y")->get();
+        $diffusiondataA = Diffusion::select("*")->where("type","=","a")->where("status","=","Y")->get();
+        $diffusiondataB = Diffusion::select("*")->where("type","=","b")->where("status","=","Y")->get();
+        $diffusiondataC = Diffusion::select("*")->where("type","=","c")->where("status","=","Y")->get();
+        return view('web.diffusion.page',compact("bannerdata","diffusiondataA","diffusiondataB","diffusiondataC"));
     }
 
     public function promotional()
@@ -46,7 +50,11 @@ class WebHomeController extends Controller
 
     public function we()
     {
-        return view('web.we.page');
+        $bannerdata = Banners::select("*")->where("types","=","5")->where("status","=","Y")->get();
+        $wedataA = We::select("*")->where("type","=","a")->where("status","=","Y")->get();
+        $wedataB = We::select("*")->where("type","=","b")->where("status","=","Y")->get();
+        $wedataC = We::select("*")->where("type","=","c")->where("status","=","Y")->get();
+        return view('web.we.page',compact("bannerdata","wedataA","wedataB","wedataC"));
     }
 
 }

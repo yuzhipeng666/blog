@@ -9,12 +9,10 @@
             <div class="slider">
                 <div class="flexslider" id="flexslider">
                     <ul class="slides">
-                        <li class="flex-active" style="width:100%; display: list-item;"><img
-                                    src="{{asset("./web/static/images/lunbo4.jpg")}}" style="width: 100%;"></li>
-                        <li class="flex-active" style="width:100%; display: list-item;"><img
-                                    src="{{asset("./web/static/images/lunbo4.jpg")}}" style="width: 100%;"></li>
-                        <li class="flex-active" style="width:100%; display: list-item;"><img
-                                    src="{{asset("./web/static/images/lunbo4.jpg")}}" style="width: 100%;"></li>
+                        @foreach($bannerdata as $k => $v)
+                            <li class="flex-active" style="width:100%; display: list-item;"><img
+                                        src="{{asset('storage/'.$v['path'])}}" style="width: 100%;"></li>
+                        @endforeach
                     </ul>
                 </div>
             </div>
@@ -32,52 +30,21 @@
                     <div class="panel-bd">
                         <div class="works">
                             <ul>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li><li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
+                                @foreach($diffusiondataA as $k => $v)
+                                    <li><a href="{{$v['url']}}" title="{{$v['title']}}">
+                                            <div class="pic"><img class="lazy"
+                                                                  src="{{asset('storage/'.$v['path'])}}"
+                                                                  style="display: inline;height: 100%"><span></span></div>
+                                            <div class="info">
+                                                {{--<p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>--}}
+                                                <p class="title">{{$v['title']}}</p></div>
+                                        </a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
-                    <div class="panel-ft"><a href="page/works.html" class="more">了解更多 》</a>
-                    </div>
+                    {{--<div class="panel-ft"><a href="page/works.html" class="more">了解更多 》</a>--}}
+                    {{--</div>--}}
                 </div>
             </div>
 
@@ -89,52 +56,20 @@
                     <div class="panel-bd">
                         <div class="works">
                             <ul>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li><li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
+                                @foreach($diffusiondataB as $k => $v)
+                                    <li><a href="{{$v['url']}}" title="{{$v['title']}}">
+                                            <div class="pic"><img class="lazy"
+                                                                  src="{{asset('storage/'.$v['path'])}}"
+                                                                  style="display: inline;height: 100%"><span></span></div>
+                                            <div class="info">
+                                                {{--<p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>--}}
+                                                <p class="title">{{$v['title']}}</p></div>
+                                        </a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
-                    <div class="panel-ft"><a href="page/works.html" class="more">了解更多 》</a>
-                    </div>
+
                 </div>
             </div>
             <div class="panel-wrap">
@@ -145,52 +80,20 @@
                     <div class="panel-bd">
                         <div class="works">
                             <ul>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
-                                <li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li><li><a href="page/worksDetail.html?id=29" title="Levi's">
-                                        <div class="pic"><img class="lazy" 
-                                                              src="http://aosum.com/resource/works/levis1.jpg"
-                                                              style="display: inline;"><span></span></div>
-                                        <div class="info"><p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>
-                                            <p class="title">Levi's</p></div>
-                                    </a></li>
+                                @foreach($diffusiondataC as $k => $v)
+                                    <li><a href="{{$v['url']}}" title="{{$v['title']}}">
+                                            <div class="pic"><img class="lazy"
+                                                                  src="{{asset('storage/'.$v['path'])}}"
+                                                                  style="display: inline;height: 100%"><span></span></div>
+                                            <div class="info">
+                                                {{--<p class="sub-title">品牌纪录片 | 服装 | 2018.1.2</p>--}}
+                                                <p class="title">{{$v['title']}}</p></div>
+                                        </a></li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
-                    <div class="panel-ft"><a href="page/works.html" class="more">了解更多 》</a>
-                    </div>
+
                 </div>
                 <div class="panel-wrap">
                     <div class="panel">

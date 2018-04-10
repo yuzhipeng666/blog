@@ -10,8 +10,8 @@
                 <div class="flexslider" id="flexslider">
                     <ul class="slides">
                         @foreach($bannerdata as $k => $v)
-                            <li class="flex-active" style="width:100%; display: list-item;"><img
-                                        src="{{asset('storage/'.$v['path'])}}" style="width: 100%;"></li>
+                            <li class="flex-active" style="width:100%; display: list-item;"><a href="{{$v['url']}}" title="{{$v['title']}}"><img
+                                            src="{{asset('storage/'.$v['path'])}}" style="width: 100%;"></a></li>
                         @endforeach
                     </ul>
                 </div>

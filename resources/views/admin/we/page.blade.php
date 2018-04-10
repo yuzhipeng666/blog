@@ -58,7 +58,7 @@
                     <th>序号</th>
                     <th>Title</th>
                     <th>Name</th>
-                    <th>Url</th>
+                    {{--<th>Url</th>--}}
                     <th>类型</th>
                     <th>图片</th>
                     <th>操作</th>
@@ -70,7 +70,7 @@
                         <th>{{$k+1}} </th>
                         <th>{{$v['title']}} </th>
                         <th>{{$v['name']}} </th>
-                        <th>{{$v['url']}} </th>
+                        {{--<th>{{$v['url']}} </th>--}}
                         <th>{{$types->typest($v['type'])}} </th>
                         <th><img width="80px" height="50px" src="{{asset('storage/'.$v['path'])}}" alt=""> </th>
                         <th>

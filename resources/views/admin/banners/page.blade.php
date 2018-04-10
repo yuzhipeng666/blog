@@ -54,7 +54,7 @@
                 <tr>
                     <th>序号</th>
                     <th>名称</th>
-                    <th>Url</th>
+                    {{--<th>Url</th>--}}
                     <th>类型</th>
                     <th>Banner图</th>
                     <th>操作</th>
@@ -65,7 +65,7 @@
                 <tr>
                     <th>{{$k+1}} </th>
                     <th>{{$v['name']}} </th>
-                    <th>{{$v['url']}} </th>
+                    {{--<th>{{$v['url']}} </th>--}}
                     <th>{{$types->typest($v['types'])}} </th>
                     <th><img width="80px" height="50px" src="{{asset('storage/'.$v['path'])}}" alt=""> </th>
                     <th>

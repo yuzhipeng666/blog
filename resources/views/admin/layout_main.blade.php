@@ -95,6 +95,14 @@
                         <a href="{{asset("/admwe")}}"><i class="fa fa-sitemap fa-fw"></i>我们</a>
                         <!-- /.nav-second-level -->
                     </li>
+                    <li>
+                        <a href="{{asset("/admnews")}}"><i class="fa fa-sitemap fa-fw"></i>新闻</a>
+                        <!-- /.nav-second-level -->
+                    </li>
+                    <li>
+                        <a href="{{asset("/upHomeinformation")}}"><i class="fa fa-sitemap fa-fw"></i>首页信息</a>
+                        <!-- /.nav-second-level -->
+                    </li>
                 </ul>
             </div>
             <!-- /.sidebar-collapse -->
@@ -124,7 +132,6 @@
 
 <!-- Custom Theme JavaScript -->
 <script src="{{asset("./admin/startbootstrap/dist/js/sb-admin-2.js")}}"></script>
-
 </body>
 
 </html>

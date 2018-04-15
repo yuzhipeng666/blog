@@ -1,3 +1,4 @@
+@inject('sstt', 'App\Models\Homeinformation')
 <html>
 <head>
     <meta charset="UTF-8">
@@ -6,8 +7,11 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
     <title>快象影视</title>
-    <!--<link href="http://aosum.com/favicon.ico" type="image/x-icon" rel="shortcut icon">-->
+    <meta name="keywords" content="{{$sstt->homedata()->keywords}}">
+    <meta name="description" content="{{$sstt->homedata()->description}}">
+    <link href="{{asset("./web/static/images/WechatIMG7.jpg")}}" type="image/x-icon" rel="shortcut icon">
     <meta name="author" content="Aosum">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_475975_4j9tcc3y9n5ng66r.css">
     <link rel="stylesheet" href="{{asset("./web/static/css/font.min.css?v=a0es784c4ca")}}">
     <link rel="stylesheet" href="{{asset("./web/static/css/base.css?v=cf757s43c24")}}">
     <link rel="stylesheet" href="{{asset("./web/static/css/blog.css?v=c4aasffdas15")}}">
@@ -22,13 +26,70 @@
         img {
             object-fit: cover;
         }
+        .clear {
+            clear: both;
+        }
+
+        .xinwen a {
+            color: #fff;
+            display: block;
+            font-size: 18px;
+            margin: 20px 0;
+            float: left;
+            width: 33%;
+        }
+        .xinwen {
+            padding: 20px;
+            width: 100%;
+            background: #000;
+            /*height: 250px;*/
+            margin-top: 35px;
+        }
+
+        .back-to-top {
+            position: fixed;
+            /*right: 20px;*/
+            bottom: 10px;
+            left: calc(50% - 25px);
+            margin: 0 auto;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            color: #2C2C2C;
+            text-decoration: none;
+            /*border: 1px solid #CCCCCC;*/
+            z-index: 999999;
+            background-image: url({{asset("/web/static/images/5-120601160008-50.png")}});
+            background-origin: no-repeat;
+            background-size: 100% 100%;
+        }
+        @media (max-width: 750px){
+            #htmls img {
+                width: 100%;
+            }
+            .xinwen a {
+                width: 100%;
+            }
+            }
     </style>
 </head>
 
 <body>
 <!-- Site begin -->
-<div class="sitecontent transform">
 
+<div class="sitecontent transform">
+    <div class="focusvideo-pop">
+        <div class="video-close">
+            <i href="#close" id="close" class="iconfont  icon-X"></i>
+        </div>
+        <div class="video-show">
+            <embed id="videovl" src='' allowFullScreen='true'   autostart=true quality='high' width="100%" height="500" align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
+            {{--<video id="videovl" width="100%" controls src="" type="video/mp4">--}}
+                {{--<source id="videosrc" src="" type="video/mp4" />--}}
+            {{--</video>--}}
+        </div>
+    </div>
     <!-- Header begin -->
     <div class="header">
         <div class="h-body">
@@ -49,14 +110,14 @@
                                     @endif>我们</span></a></li>
                 </ul>
             </div>
-            <div class="tel"><a href="tel: 021-88888888">电话：021-88888888</a></div>
+            <div class="tel"><a href="{{$sstt->homedata()->phone}}">电话：{{$sstt->homedata()->phone}}</a></div>
         </div>
     </div>
     <div class="header-m">
         <div class="side-toggle"></div>
         <div class="title">
             <div class="logo"></div>
-            <a href="tel:021-88888888" class="tel"><i class="icon-tel"></i>电话：021-88888888</a></div>
+            <a href="tel:{{$sstt->homedata()->phone}}" class="tel"><i class="icon-tel"></i>电话：{{$sstt->homedata()->phone}}</a></div>
     </div>
     <!-- Header end -->
 
@@ -66,7 +127,9 @@
 
     <div class="page-mask hide"></div>
 </div>
-
+<div style="margin: 0 auto;width: 100%;">
+    <a class="back-to-top" href="#top"></a>
+</div>
 <div class="side">
     <ul class="menu">
         <li></li>
@@ -94,6 +157,7 @@
     </ul>
 </div>
 <script>
+
     $(document).ready(function () {
         $('.flexslider').flexslider({
             directionNav: true,
@@ -105,7 +169,39 @@
         });
     });
 </script>
+<script>
+    var backBtn= $('.back-to-top');
+    backBtn.on('click',function () {
+        console.log("12")
+        $('body').animate(
+                {
+                    scrollTop:0
+                },300
+        )
 
+    })
 
+        $(window).on('scroll',function () {
+            if($(window).scrollTop()>$(window).height()){
+                backBtn.fadeIn();
+            }else{
+                backBtn.fadeOut();
+            }
+        })
+    $(".tow-video-content-img").on("click",function () {
+        $(".focusvideo-pop").addClass("show-ul");
+    });
+    $("#close").on("click",function () {
+        $(".focusvideo-pop").removeClass("show-ul");
+        $("#videovl").attr("autoplay", false);
+    });
+    $(".videosrcval").on("click", function () {
+        var srcval = $(this).attr("datasrc");
+        $("#videovl").attr("src", srcval);
+        document.getElementById("videovl").autoplay = "autoplay";
+
+    })
+</script>
+@yield('javascript')
 </body>
 </html>

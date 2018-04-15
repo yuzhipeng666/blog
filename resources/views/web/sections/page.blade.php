@@ -1,5 +1,5 @@
 @extends('web.layout_main')
-
+@inject('sstt', 'App\Models\Homeinformation')
 @section('content')
 
     <div class="main main-scroll" id="main">
@@ -12,7 +12,7 @@
                         {{--<li class="flex-active" style="width:100%; display: list-item;"><img--}}
                                     {{--src="{{asset("./web/static/images/lunbo3.jpg")}}" style="width: 100%;"></li>--}}
                         @foreach($bannerdata as $k => $v)
-                            <li class="flex-active" style="width:100%; display: list-item;"><a href="{{$v['url']}}" title="{{$v['title']}}"><img
+                            <li class="flex-active" style="width:100%; display: list-item;"><a class="tow-video-content-img videosrcval" datasrc="{{$v['url']}}" href="javascript:void(0)" title="{{$v['title']}}"><img
                                             src="{{asset('storage/'.$v['path'])}}" style="width: 100%;"></a></li>
                         @endforeach
                     </ul>
@@ -40,7 +40,7 @@
                                             {{--<p class="title">Levi's</p></div>--}}
                                     {{--</a></li>--}}
                                 @foreach($sectionsdataA as $k => $v)
-                                    <li><a href="{{$v['url']}}" title="{{$v['title']}}">
+                                    <li><a class="tow-video-content-img videosrcval" datasrc="{{$v['url']}}" href="javascript:void(0)" title="{{$v['title']}}">
                                             <div class="pic"><img class="lazy"
                                                                   src="{{asset('storage/'.$v['path'])}}"
                                                                   style="display: inline;height: 100%"><span></span></div>
@@ -67,7 +67,7 @@
                         <div class="works">
                             <ul>
                                 @foreach($sectionsdataB as $k => $v)
-                                    <li><a href="{{$v['url']}}" title="{{$v['title']}}">
+                                    <li><a class="tow-video-content-img videosrcval" datasrc="{{$v['url']}}" href="javascript:void(0)" title="{{$v['title']}}">
                                             <div class="pic"><img class="lazy"
                                                                   src="{{asset('storage/'.$v['path'])}}"
                                                                   style="display: inline;height: 100%"><span></span></div>
@@ -93,7 +93,7 @@
                         <div class="works">
                             <ul>
                                 @foreach($sectionsdataC as $k => $v)
-                                    <li><a href="{{$v['url']}}" title="{{$v['title']}}">
+                                    <li><a class="tow-video-content-img videosrcval" datasrc="{{$v['url']}}" href="javascript:void(0)" title="{{$v['title']}}">
                                             <div class="pic"><img class="lazy"
                                                                   src="{{asset('storage/'.$v['path'])}}"
                                                                   style="display: inline;height: 100%"><span></span></div>
@@ -138,11 +138,16 @@
                     <div class="panel-bd">
                         <div class="">
                             <h3>联系方式 </h3>
-                            <p><span>地址：</span><a href="">上海浦东国际传媒中心1818室</a></p><br>
-                            <p><span>电话：</span><a href="tel:186073566666">186073566666 </a><a href="tel:021-888888888">021-888888888</a>
+                            <p><span>地址：</span><a href="">{{$sstt->homedata()->address}}</a></p><br>
+                            <p><span>电话：</span><a href="tel:{{$sstt->homedata()->phone}}">{{$sstt->homedata()->phone}} </a>
                             </p><br>
-                            <p><span>网址：</span><a href="http://i.youku.com/i/UNTMzOTc1MTU2">http://i.youku.com/i/UNTMzOTc1MTU2</a>
+                            <p><span>网址：</span><a href="{{$sstt->homedata()->url}}">{{$sstt->homedata()->url}}</a>
                             </p>
+
+                        </div>
+                        <div class="">
+                            <img width="80px" class="lazy"src="{{asset("./web/static/images/WechatIMG5.jpeg")}}">
+                            <img width="80px" class="lazy"src="{{asset("./web/static/images/WechatIMG6.jpeg")}}">
                         </div>
                     </div>
                 </div>

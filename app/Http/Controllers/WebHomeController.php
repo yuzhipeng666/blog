@@ -9,16 +9,26 @@ use App\Models\Promotional;
 use App\Models\Sections;
 use App\Models\Diffusion;
 use App\Models\We;
+use App\Models\News;
 
 class WebHomeController extends Controller
 {
+   
     
     public function homepage()
     {
         $bannerdata = Banners::select("*")->where("types","=","1")->where("status","=","Y")->get();
         $promotionaldata = Promotional::select("*")->where("status","=","Y")->get();
-        $we = We::select("*")->where("status","=","Y")->get();
-        return view('web.home.homepage',compact("bannerdata","we","promotionaldata"));
+        $we = We::select("*")->where("status","=","Y")->where("type","=","a")->get();
+        $newsdata = News::select("*")->get();
+        return view('web.home.homepage',compact("bannerdata","we","promotionaldata","newsdata"));
+    }
+
+    public function homeid($id)
+    {
+
+        $newsid = News::select("content")->where("id","=",$id)->first();
+        return view('web.home.homeid',compact("newsid"));
     }
 
     public function diffusion()

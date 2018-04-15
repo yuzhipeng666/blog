@@ -11,6 +11,8 @@ use App\Models\Promotional;
 use App\Models\Sections;
 use App\Models\Diffusion;
 use App\Models\We;
+use App\Models\News;
+use App\Models\Homeinformation;
 
 class AdminHomeController extends Controller
 {
@@ -20,6 +22,32 @@ class AdminHomeController extends Controller
         $admin->email = "kuaixiang@qq.com";
         $admin->password = "kuaixiang2018";
         $admin->save();
+    }
+    public function addHomeinformation(){
+        $admin = new Homeinformation();
+        $admin->keywords = "keywords";
+        $admin->description = "description";
+        $admin->address = "address";
+        $admin->phone = "phone";
+        $admin->url = "url";
+        $admin->bf = "";
+        $admin->homes = "";
+        $admin->save();
+    }
+    public function upHomeinformation()
+    {
+
+        $bannersup = Homeinformation::where('id', '=', 1)->first();
+        return view('admin.banners.uphome')->withbannersup($bannersup);
+    }
+    public function upsetHomeinformation(Request $request)
+    {
+        $dataup = $request->all();
+
+        $ress = Homeinformation::where('id', '=', 1)->update(['keywords' => $dataup['keywords'],'description' => $dataup['description'], 'address' =>  $dataup["address"],'phone' => $dataup["phone"],'url' => $dataup["url"]] );
+        if($ress){
+            return Redirect('upHomeinformation');
+        }
     }
     
     public function login()
@@ -672,6 +700,49 @@ class AdminHomeController extends Controller
         }
         return Redirect('admwe');
 
+    }
+
+
+    //新闻
+    public function admnewsList()
+    {
+        $news = News::orderBy('created_at', 'desc')->paginate(10);
+        return view('admin.news.page')->withnews($news);
+
+
+    }
+
+    public function addAdmnews()
+    {
+        return view('admin.news.addpage');
+
+    }
+
+    public function createAdmnews(Request $request)
+    {
+        $data = $request->all();//后期考虑加一个公共方法进行表单数据的全部过滤
+        $pro = new News();
+        $pro->title = $data["title"];
+        $pro->content = $data["editorValue"];
+        $pro->bf = '';
+        $pro->save();
+        if($pro){
+            return Redirect('admnews');
+        }
+    }
+
+    public function deletcAdmNews($id)
+    {
+        $res = News::where('id', '=', $id)->first();
+        if (empty($res)) {
+            $res = '';
+        } else {
+            $res = $res->toArray();
+        }
+        if (!empty($res)) {
+            News::where('id', '=', $id)->delete();
+        }
+        return Redirect('admnews');
     }
 
 }

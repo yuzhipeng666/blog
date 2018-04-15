@@ -36,7 +36,32 @@
 }*/
 
 /** Element basic **/
+.show-ul {
+    display: block!important;
+    color: #fff;
+}
+.video-show {
+    position: relative;
+    z-index: 9999999;
+    margin: 0 auto;
+    top: 13%;
+    display: table;
+    width: 65%;
 
+}
+.video-close {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+.focusvideo-pop {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 9999999;
+    background-color: rgba(0, 0, 0, 0.85)
+}
 html,body {
     overflow-x: hidden;
 }
@@ -133,7 +158,7 @@ hr {
     width: 12px;
     height: 10px;
     margin-right: 3px;
-    background: url(../images/icon-phone.png) no-repeat center;
+    /*background: url(../images/icon-phone.png) no-repeat center;*/
     background-size: 100%;
 }
 
@@ -183,11 +208,11 @@ hr {
 }
 .header .logo a {
     display: inline-block;
-    margin-top: 18px;
+    margin-top: 10px;
 }
 .header .logo img {
     /*height: 36px;*/
-    height: 50px;
+    height: 70px;
 }
 .header .tel,
 .header .tel a {
@@ -283,7 +308,7 @@ hr {
     display: inline-block;
     width: 100px;
     height: 100%;
-    background: url(../images/logo-mobile.png) no-repeat center;
+    /*background: url(../images/logo-mobile.png) no-repeat center;*/
     background-size: 100%;
 }
 .header-m .tel {

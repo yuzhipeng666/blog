@@ -20,6 +20,7 @@ Route::get('/diffusion', 'WebHomeController@diffusion');
 Route::get('/promotional', 'WebHomeController@promotional');
 Route::get('/sections', 'WebHomeController@sections');
 Route::get('/we', 'WebHomeController@we');
+Route::get('/homeid/{id}', 'WebHomeController@homeid');
 
 //后台管理页面路由
 Route::get('/admins', 'AdminHomeController@login');
@@ -69,7 +70,7 @@ Route::get('/dashboard', 'AdminHomeController@dashboard');
     Route::get('/statusAdmdiffusion/{id}/{status}', 'AdminHomeController@statusAdmdiffusion');
 
     //我们 路由
-    Route::post('/admweListchax', 'AdminHomeController@admweListchax');
+    Route::post('/admwenListchax', 'AdminHomeController@admwenListchax');
     Route::get('/admwe', 'AdminHomeController@admweList');
     Route::get('/addAdmwe', 'AdminHomeController@addAdmwe');
     Route::post('/createAdmwe', 'AdminHomeController@createAdmwe');
@@ -77,4 +78,17 @@ Route::get('/dashboard', 'AdminHomeController@dashboard');
     Route::get('/upAdmwe/{id}', 'AdminHomeController@upAdmwe');
     Route::post('/upsetAdmwe', 'AdminHomeController@upsetAdmwe');
     Route::get('/statusAdmwe/{id}/{status}', 'AdminHomeController@statusAdmwe');
+
+    //新闻 路由
+    Route::post('/admnewsListchax', 'AdminHomeController@admnewsListchax');
+    Route::get('/admnews', 'AdminHomeController@admnewsList');
+    Route::get('/addAdmnews', 'AdminHomeController@addAdmnews');
+    Route::post('/createAdmnews', 'AdminHomeController@createAdmnews');
+    Route::get('/deletcAdmnews/{id}', 'AdminHomeController@deletcAdmnews');
+    Route::get('/upAdmnews/{id}', 'AdminHomeController@upAdmnews');
+    Route::post('/upsetAdmnews', 'AdminHomeController@upsetAdmnews');
+    Route::get('/statusAdmnews/{id}/{status}', 'AdminHomeController@statusAdmnews');
+
+    Route::post('/upsetHomeinformation', 'AdminHomeController@upsetHomeinformation');
+    Route::get('/upHomeinformation', 'AdminHomeController@upHomeinformation');
 //});

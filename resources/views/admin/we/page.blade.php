@@ -1,5 +1,4 @@
 @extends('admin.layout_main')
-@inject('types', 'App\Models\We')
 @section('content')
 
     <div id="page-wrapper">
@@ -16,7 +15,7 @@
             </div>
         </div>
         <div class="row" style="margin-top: 20px;">
-            <form class="form-inline" action="{{asset('admweListchax')}}" enctype='multipart/form-data' method="post">
+            <form class="form-inline" action="{{asset('admwenListchax')}}" enctype='multipart/form-data' method="post">
                 {{ csrf_field() }}
                 <div class="form-group">
                     <div class="col-xs-2">
@@ -71,7 +70,7 @@
                         <th>{{$v['title']}} </th>
                         <th>{{$v['name']}} </th>
                         {{--<th>{{$v['url']}} </th>--}}
-                        <th>{{$types->typest($v['type'])}} </th>
+                        <th>{{$v['type']}} </th>
                         <th><img width="80px" height="50px" src="{{asset('storage/'.$v['path'])}}" alt=""> </th>
                         <th>
                             <a href="{{asset("/upAdmwe/".$v['id'])}}" type="button" class="btn btn-info">修改</a>

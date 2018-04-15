@@ -91,4 +91,5 @@ Route::get('/dashboard', 'AdminHomeController@dashboard');
 
     Route::post('/upsetHomeinformation', 'AdminHomeController@upsetHomeinformation');
     Route::get('/upHomeinformation', 'AdminHomeController@upHomeinformation');
+    Route::get('/addHomeinformation', 'AdminHomeController@addHomeinformation');
 //});

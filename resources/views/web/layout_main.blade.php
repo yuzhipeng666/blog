@@ -29,7 +29,13 @@
         .clear {
             clear: both;
         }
-
+        .htmls img {
+            width: 100%;
+        }
+        .htmls {
+            max-width: 800px;
+            margin: 0 auto;
+        }
         .xinwen a {
             color: #fff;
             display: block;

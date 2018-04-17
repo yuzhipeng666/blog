@@ -9,7 +9,7 @@
             <!-- Product list begin -->
             <div class="panel-wrap">
                 <div class="panel">
-                    <div class="panel-hd" style="margin-right: 10px!important;margin-left: 10px!important;">
+                    <div class="" style="margin-right: 10px!important;margin-left: 10px!important;">
                         <div id="htmls">{{$newsid->content}}</div>
                     </div>
                 </div>

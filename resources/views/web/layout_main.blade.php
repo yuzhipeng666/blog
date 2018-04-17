@@ -29,12 +29,12 @@
         .clear {
             clear: both;
         }
-        .htmls img {
-            width: 100%;
+        #htmls img {
+            width: 100%!important;
         }
-        .htmls {
-            max-width: 800px;
-            margin: 0 auto;
+        #htmls {
+            max-width: 800px!important;
+            margin: 0 auto!important;
         }
         .xinwen a {
             color: #fff;

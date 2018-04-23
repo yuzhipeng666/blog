@@ -116,14 +116,14 @@
                                     @endif>我们</span></a></li>
                 </ul>
             </div>
-            <div class="tel"><a href="{{$sstt->homedata()->phone}}">电话：{{$sstt->homedata()->phone}}</a></div>
+            <div class="tel"><a href="021-58649529">电话：021-58649529</a></div>
         </div>
     </div>
     <div class="header-m">
         <div class="side-toggle"></div>
         <div class="title">
             <div class="logo"></div>
-            <a href="tel:{{$sstt->homedata()->phone}}" class="tel"><i class="icon-tel"></i>电话：{{$sstt->homedata()->phone}}</a></div>
+            <a href="tel:021-58649529" class="tel"><i class="icon-tel"></i>电话：021-58649529</a></div>
     </div>
     <!-- Header end -->
 

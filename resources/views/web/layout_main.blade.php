@@ -77,7 +77,13 @@
             .xinwen a {
                 width: 100%;
             }
+            #videovl {
+                height: 200px;
             }
+            .video-show {
+                width: 95%;
+            }
+        }
     </style>
 </head>
 
@@ -90,9 +96,9 @@
             <i href="#close" id="close" class="iconfont  icon-X"></i>
         </div>
         <div class="video-show">
-            <embed id="videovl" src='' allowFullScreen='true'   autostart=true quality='high' width="100%" height="500" align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>
-            {{--<video id="videovl" width="100%" controls src="" type="video/mp4">--}}
-                {{--<source id="videosrc" src="" type="video/mp4" />--}}
+            <iframe id="videovl" width="100%" height="500"  src="" scrolling="no"  style="border: none;"  allowfullscreen="" frameborder="0" ></iframe>
+            {{--<embed id="videovl" src='' allowFullScreen='true'   autostart=true quality='high' width="100%" height="500" align='middle' allowScriptAccess='always' type='application/x-shockwave-flash'></embed>--}}
+            {{--<video id="videovl" width="100%" height="500" controls src="" type="video/mp4">--}}
             {{--</video>--}}
         </div>
     </div>
@@ -200,6 +206,7 @@
     $("#close").on("click",function () {
         $(".focusvideo-pop").removeClass("show-ul");
         $("#videovl").attr("autoplay", false);
+        $("#videovl").attr("src", "");
     });
     $(".videosrcval").on("click", function () {
         var srcval = $(this).attr("datasrc");

@@ -88,6 +88,9 @@
 </head>
 
 <body>
+<div style="margin: 0 auto;width: 100%;">
+    <a class="back-to-top" href="#top"></a>
+</div>
 <!-- Site begin -->
 
 <div class="sitecontent transform">
@@ -136,12 +139,9 @@
     <!-- Main begin -->
 @yield('content')
 <!-- Main end -->
-
     <div class="page-mask hide"></div>
 </div>
-<div style="margin: 0 auto;width: 100%;">
-    <a class="back-to-top" href="#top"></a>
-</div>
+
 <div class="side">
     <ul class="menu">
         <li></li>
@@ -182,24 +182,80 @@
     });
 </script>
 <script>
-    var backBtn= $('.back-to-top');
-    backBtn.on('click',function () {
-        console.log("12")
-        $('body').animate(
-                {
-                    scrollTop:0
-                },300
-        )
-
-    })
-
-        $(window).on('scroll',function () {
-            if($(window).scrollTop()>$(window).height()){
-                backBtn.fadeIn();
-            }else{
-                backBtn.fadeOut();
+//    (function() {
+//
+//        var  $backToTopEle = $('<div style="margin: 0 auto;width: 100%;">'+
+//                '<a class="back-to-top" href="#top"></a>'+
+//                '</div>').appendTo($("body")).click(function() {
+//            $("html, body").animate({ scrollTop: 0 }, 120);
+//        }), $backToTopFun = function() {
+//            var st = $(document).scrollTop(), winh = $(window).height();
+//            (st > 0)? $backToTopEle.show(): $backToTopEle.hide();
+//            //IE6下的定位
+//            if (!window.XMLHttpRequest) {
+//                $backToTopEle.css("top", st + winh - 60);
+//            }
+//        };
+//		console.log($backToTopEle)
+//        $(window).bind("scroll", $backToTopFun);
+//        $(function() { $backToTopFun(); });
+//    })();
+    (function() {
+        var backBtn= $('.back-to-top');
+        function aa() {
+            var st = $(document).scrollTop(), winh = $(window).height();
+            console.log(st);
+            (st > 0)? backBtn.show(): backBtn.hide();
+            //IE6下的定位
+            if (!window.XMLHttpRequest) {
+                backBtn.css("top", st + winh - 60);
             }
+//            if($(window).scrollTop()>$(window).height()){
+//                backBtn.fadeIn();
+//            }else{
+//                backBtn.fadeOut();
+//            }
+        }
+        function bb() {
+            var st = $(".main-scroll").scrollTop(), winh = $(window).height();
+            console.log(st);
+            (st > 0)? backBtn.show(): backBtn.hide();
+            //IE6下的定位
+            if (!window.XMLHttpRequest) {
+                backBtn.css("top", st + winh - 60);
+            }
+//            if($(window).scrollTop()>$(window).height()){
+//                backBtn.fadeIn();
+//            }else{
+//                backBtn.fadeOut();
+//            }
+        }
+
+        backBtn.on('click',function () {
+            $('body').animate(
+                    {
+                        scrollTop:0
+                    },120
+            )
+            $('.main-scroll').animate(
+                    {
+                        scrollTop:0
+                    },120
+            )
+
         })
+        $(".main-scroll").on('scroll',function () {
+            console.log("56789")
+            bb()
+        })
+        $(window).on('scroll',function () {
+            console.log("56789")
+            aa()
+        })
+        aa()
+    })();
+
+
     $(".tow-video-content-img").on("click",function () {
         $(".focusvideo-pop").addClass("show-ul");
     });

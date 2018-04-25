@@ -23,6 +23,9 @@
     <script src="{{asset("./web/static/js/global.js?v=59fa0fs1452")}}"></script>
     <script src="{{asset("./web/static/js/index.js?v=59fa0fs1452")}}"></script>
     <style>
+        /*.home-contact {*/
+            /*background: #f0f0f0;*/
+        /*}*/
         img {
             object-fit: cover;
         }

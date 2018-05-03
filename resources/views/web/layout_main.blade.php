@@ -22,15 +22,16 @@
     <script src="{{asset("./web/static/js/jquery.flexslider.min.js?v=b8c19s259c6")}}"></script>
     <script src="{{asset("./web/static/js/global.js?v=59fa0fs1452")}}"></script>
     <script src="{{asset("./web/static/js/index.js?v=59fa0fs1452")}}"></script>
-    <script>
-        var _hmt = _hmt || [];
-        (function() {
-            var hm = document.createElement("script");
-            hm.src = "https://hm.baidu.com/hm.js?61303e65809d6d64a2edb550e1c1af26";
-            var s = document.getElementsByTagName("script")[0];
-            s.parentNode.insertBefore(hm, s);
-        })();
-    </script>
+    {{--<script>--}}
+        {{--var _hmt = _hmt || [];--}}
+        {{--(function() {--}}
+            {{--var hm = document.createElement("script");--}}
+            {{--hm.src = "https://hm.baidu.com/hm.js?61303e65809d6d64a2edb550e1c1af26";--}}
+            {{--var s = document.getElementsByTagName("script")[0];--}}
+            {{--s.parentNode.insertBefore(hm, s);--}}
+        {{--})();--}}
+    {{--</script>--}}
+    <script language="javascript" src="http://dct.zoosnet.net/JS/LsJS.aspx?siteid=DCT82612458&float=1&lng=cn"></script>
     <style>
         /*.home-contact {*/
             /*background: #f0f0f0;*/
